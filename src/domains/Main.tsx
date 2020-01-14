@@ -5,8 +5,8 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
-
-import { ControlScreen } from './control/Control.screen';
+import ReduxViewerScreen from 'src/domains/debug/debug.screen';
+import {ControlScreen} from './control/Control.screen';
 
 class DashboardScreen extends React.Component {
   render() {
@@ -27,22 +27,13 @@ class ScheduleScreen extends React.Component {
     );
   }
 }
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-}
 
 const TabNavigator = createBottomTabNavigator(
   {
     Dashboard: DashboardScreen,
     Control: ControlScreen,
     Schedule: ScheduleScreen,
-    Settings: SettingsScreen,
+    Settings: ReduxViewerScreen,
   },
   {
     defaultNavigationOptions: ({navigation}) => ({

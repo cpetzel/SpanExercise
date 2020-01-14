@@ -1,16 +1,12 @@
 import React from 'react';
 import {Text} from 'react-native';
-import {DeviceFields, Device} from 'src/models/devices/Device.model';
+import {Appliance, IAppliance} from 'src/models/appliance/Appliance.model';
+import {ISpace} from 'src/models/spaces/Space.model';
 
-interface DeviceProps {
-  device: DeviceFields;
+interface SpaceProps {
+  space: ISpace;
 }
 
-export const DeviceButton = ({device: {id, name}}: DeviceProps) => {
-  console.log(`craig props == ${JSON.stringify(id)}`);
-  return (
-    <Text>
-      device with id == ${id} 
-    </Text>
-  );
+export const SpaceButton = (space: SpaceProps) => {
+  return <Text style={{paddingTop: 20}}>{JSON.stringify(space)}</Text>;
 };

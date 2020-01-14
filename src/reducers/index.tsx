@@ -1,9 +1,7 @@
 import {combineReducers} from 'redux';
-import {createReducer} from 'redux-orm';
 
-import spanOrm from '../models/ORM';
+import {dataReducer} from 'src/models/spaces/Space.reducer';
 
 export default combineReducers({
-  orm: createReducer(spanOrm), // This will be the Redux-ORM state.
-  // … potentially other reducers
+  orm: dataReducer,
 });

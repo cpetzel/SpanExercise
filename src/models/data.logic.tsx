@@ -1,10 +1,10 @@
 import {createLogic} from 'redux-logic';
-import {DEVICES} from './devices/Device.actions';
+import {DATA} from './appliance/Appliance.actions';
 
 const logTag = '[data.logic]';
 
 const fetchDataLogic = createLogic({
-  type: DEVICES.API.FETCH,
+  type: DATA.API.FETCH,
   debounce: 500,
   // warnTimeout: 0, // long running logic
   process: async () => {
